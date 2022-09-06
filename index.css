@@ -1,0 +1,167 @@
+:root {
+    --first: #05386b;
+    --sec: #379683;
+    --third: #5cdb95;
+    --fourth: #8ee4af;
+    --fifth: #edf5e1;
+  }
+  
+  body {
+    overflow: hidden;
+    font-weight: bolder;
+    width: 100vw;
+    height: 100vh;
+    color: var(--fifth);
+    font-size: 1.5em;
+    background: var(--third);
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  body #root {
+    border-radius: 70px;
+    padding: 60px 90px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: var(--fifth);
+  }
+  body #root .calculator {
+    width: 1000px;
+    background: var(--fifth);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 75px;
+    align-items: center;
+  }
+  body #root .calculator .side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  body #root .calculator .side .logCon {
+    background: var(--fourth);
+    width: 350px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    text-align: end;
+    padding: 10px 30px;
+  }
+  body #root .calculator .side .logCon .hisLog {
+    width: 100%;
+    background-color: var(--sec);
+    height: 30px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  body #root .calculator .side .logCon .top {
+    border-radius: 20px 20px 0 0;
+  }
+  body #root .calculator .side .logCon .bottom {
+    border-radius: 0 0 20px 20px;
+  }
+  body #root .calculator .side .displayCon {
+    width: 390px;
+    background: var(--third);
+    border-radius: 20px;
+    padding: 10px;
+  }
+  body #root .calculator .side .displayCon #display {
+    overflow: hidden;
+    background: var(--sec);
+    color: var(--fifth);
+    height: 60px;
+    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    text-align: end;
+    border-radius: 10px;
+    padding: 0 10px;
+  }
+  body #root .calculator .btns {
+    padding: 15px;
+    background: var(--third);
+    display: grid;
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: repeat(5, 65px);
+    grid-template-areas: "clear clear equals equals" "seven eight nine add" "four five six subtract" "one two three multiply" "zero decimal decimal divide";
+    gap: 10px;
+    border-radius: 30px;
+  }
+  body #root .calculator .btns .item {
+    display: flex;
+    background: var(--sec);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #decimal::before {
+    content: "Decimal (";
+  }
+  #decimal::after {
+    content: ")";
+  }
+  
+  .btnPress {
+    -webkit-animation: pressed 1s linear;
+            animation: pressed 1s linear;
+  }
+  
+  @-webkit-keyframes pressed {
+    0% {
+      background: var(--fifth);
+      color: var(--first);
+    }
+  }
+  
+  @keyframes pressed {
+    0% {
+      background: var(--fifth);
+      color: var(--first);
+    }
+  }
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    body {
+      background: var(--fifth);
+      height: 100vh;
+      overflow-y: scroll;
+      width: 100vw;
+    }
+    body #root {
+      height: 1000px;
+      border-radius: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body #root .calculator {
+      flex-direction: column-reverse;
+      width: 600px;
+      gap: 50px;
+    }
+    body #root .calculator .btns {
+      grid-template-columns: repeat(4, 90px);
+    }
+  }/*# sourceMappingURL=index.css.map */
